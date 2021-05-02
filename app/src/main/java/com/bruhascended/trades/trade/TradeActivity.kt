@@ -9,9 +9,12 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bruhascended.trades.R
 import com.bruhascended.trades.databinding.ActivityTradeBinding
 import com.bruhascended.trades.db.Trade
+import com.bruhascended.trades.newtrade.NewTradeActivity
+import com.bruhascended.trades.newtrade.ProfitPercentageAdaptor
 import com.bruhascended.trades.trades.MainActivity
 import com.bruhascended.trades.trades.MainActivity.Companion.setupToolbar
 import com.bruhascended.trades.util.getFullDateTime
@@ -41,6 +44,10 @@ class TradeActivity : AppCompatActivity() {
         setupToolbar(binding.toolbar, getString(R.string.trade))
 
         mTrade = MainActivity.mdb?.manager()?.findByNumber(mId) ?: return
+        binding.tableLayout.layoutManager = LinearLayoutManager(this)
+        binding.tableLayout.adapter = ProfitPercentageAdaptor(
+                NewTradeActivity.percentages, mTrade.buyPrice, mTrade.tradeFee
+        )
 
         binding.apply {
             name.text = mTrade.name

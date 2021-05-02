@@ -23,7 +23,7 @@ class NewTradeActivity : AppCompatActivity() {
     private lateinit var inputMethodManager: InputMethodManager
 
     companion object {
-        private val percentages = Array(11) { it*5 }
+        val percentages = Array(11) { it*5 }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
