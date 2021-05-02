@@ -46,6 +46,10 @@ data class Trade (
 
     fun wasProfitable() = getProfitPercentage() > 0
 
+    fun getTotalInvested() = buyPrice * quantity
+
+    fun getTotalSold() = (getTotalInvested() * (getProfitPercentage() + 100))/100
+
     override fun equals(other: Any?): Boolean {
         if (javaClass != other?.javaClass) return false
 

@@ -27,7 +27,9 @@ class TradeAdaptor (
         val sellPriceText: TextView = root.findViewById(R.id.sell_price)
         val nameText: TextView = root.findViewById(R.id.name)
         val arrowImage: ImageView = root.findViewById(R.id.arrow)
+        val arrowNetImage: ImageView = root.findViewById(R.id.arrowNet)
         val net: TextView = root.findViewById(R.id.net)
+        val netAfter: TextView = root.findViewById(R.id.netAfter)
     }
 
     fun setOnItemClickListener (listener: ((id: Long) -> Unit)?) {
@@ -52,6 +54,8 @@ class TradeAdaptor (
                 arrowImage.isVisible = true
                 sellPriceText.isVisible = true
                 percentageText.isVisible = true
+                arrowNetImage.isVisible = true
+                netAfter.isVisible = true
 
                 if (trade.wasProfitable()) {
                     percentageText.text = '+' + trade.getProfitPercentage().toString() + '%'
@@ -61,13 +65,16 @@ class TradeAdaptor (
                     percentageText.setTextColor(red)
                 }
                 sellPriceText.text = "Rs " + trade.sellPrice.toString()
+                netAfter.text = "Rs " + trade.getTotalSold().toString()
             } else {
                 arrowImage.isVisible = false
                 sellPriceText.isVisible = false
                 percentageText.isVisible = false
+                arrowNetImage.isVisible = false
+                netAfter.isVisible = false
             }
             buyPriceText.text = "Rs " + trade.buyPrice.toString()
-            net.text = "Rs " + (trade.buyPrice * trade.quantity).toString()
+            net.text = "Rs " + trade.getTotalInvested().toString()
             valueText.text = trade.quantity.toString()
             nameText.text = trade.name
 
