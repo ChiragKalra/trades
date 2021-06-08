@@ -54,7 +54,13 @@ data class Trade (
         if (javaClass != other?.javaClass) return false
 
         other as Trade
-        return id == other.id
+        if (name != other.name) return false
+        if (quantity != other.quantity) return false
+        if (tradeFee != other.tradeFee) return false
+        if (buyDateTime != other.buyDateTime) return false
+        if (sellDateTime != other.sellDateTime) return false
+        if (inProgress != other.inProgress) return false
+        return true
     }
 
     override fun hashCode() = id.hashCode()

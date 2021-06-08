@@ -52,7 +52,7 @@ class TradeActivity : AppCompatActivity() {
         binding.apply {
             name.text = mTrade.name
             value.text = mTrade.quantity.toString()
-            net.text = "Rs " + (mTrade.buyPrice * mTrade.quantity).toString()
+            net.text = "$" + (mTrade.buyPrice * mTrade.quantity).toString()
             buyPrice.text = mTrade.buyPrice.toString()
             buyDate.text = getFullDateTime(mTrade.buyDateTime)
 

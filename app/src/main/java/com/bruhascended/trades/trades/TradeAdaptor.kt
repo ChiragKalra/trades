@@ -64,8 +64,8 @@ class TradeAdaptor (
                     percentageText.text = trade.getProfitPercentage().toString() + '%'
                     percentageText.setTextColor(red)
                 }
-                sellPriceText.text = "Rs " + trade.sellPrice.toString()
-                netAfter.text = "Rs " + trade.getTotalSold().toString()
+                sellPriceText.text = "$" + trade.sellPrice.toString()
+                netAfter.text = "$" + trade.getTotalSold().toString()
             } else {
                 arrowImage.isVisible = false
                 sellPriceText.isVisible = false
@@ -73,8 +73,8 @@ class TradeAdaptor (
                 arrowNetImage.isVisible = false
                 netAfter.isVisible = false
             }
-            buyPriceText.text = "Rs " + trade.buyPrice.toString()
-            net.text = "Rs " + trade.getTotalInvested().toString()
+            buyPriceText.text = "$" + trade.buyPrice.toString()
+            net.text = "$" + trade.getTotalInvested().toString()
             valueText.text = trade.quantity.toString()
             nameText.text = trade.name
 

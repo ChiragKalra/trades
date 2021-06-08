@@ -14,10 +14,10 @@
     <string name="add_new_trade">add new trade</string>
     <string name="_0">+0%</string>
     <string name="_1800">1800</string>
-    <string name="_0_4">0.4</string>
+    <string name="_0_4">0.2</string>
     <string name="name">Name</string>
     <string name="done">Done</string>
-    <string name="inr">INR</string>
+    <string name="inr">USDT</string>
     <string name="trade_prices">trade prices</string>
     <string name="trade">Trade</string>
     <string name="bought_at">Bought at</string>
